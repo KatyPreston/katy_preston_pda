@@ -12,6 +12,9 @@ require_relative('card.rb')
 class CardGame
 
 
+# needs cards initialised into CardGame
+
+
   def checkforAce(card)
     # naming convention, should be lower-case A
     if card.value = 1
