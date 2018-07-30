@@ -14,7 +14,8 @@ describe('calculator functionality', function() {
     running_total = element(by.css('#running_total'))
     element(by.css('#number2')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('2')
-  })
+  });
+
   it('should have working buttons to update the display of the running total', function () {
     running_total = element(by.css('#running_total'));
     element(by.css('#number1')).click();
@@ -101,5 +102,17 @@ describe('calculator functionality', function() {
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('-21');
   });
+
+  // Can you write a test to describe what you'd prefer to happen, and then correct the code to make that test pass.
+// I have changed the display message from inifinity to 'error'
+
+it('should update the display to show an error message when you use the divide operator to divide by zero', function () {
+   running_total = element(by.css('#running_total'));
+   element(by.css('#number1')).click();
+   element(by.css('#operator_divide')).click();
+   element(by.css('#number0')).click();
+   element(by.css('#operator_equals')).click();
+   expect(running_total.getAttribute('value')).to.eventually.equal('Error');
+});
 
 });
